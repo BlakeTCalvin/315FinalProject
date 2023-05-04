@@ -11,7 +11,7 @@ print("GRAPH CREATION START")
 print("------------------------------------")
 
 # ---- GRAPH CREATION
-#g.CreateGraph(fp.allVideoGameData)
+#g.CreateGraphs(fp.allVideoGameData)
 #CreateGraph(fp.PCData)
 # Other graphs that might be necessary
 
