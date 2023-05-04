@@ -82,6 +82,5 @@ def numberOfUniquePlatforms(dataframe):
     for platform in platforms:
         print(platform)
 
-print("------------------------------------")
 print("FILE PROCESSOR END")
 print("------------------------------------")

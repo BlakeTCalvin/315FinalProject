@@ -1,14 +1,30 @@
 import warnings
 import file_processor as fp
+import graphs as g
 import matplotlib as plt
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 
 warnings.filterwarnings("ignore")
 
+print("GRAPH CREATION START")
 print("------------------------------------")
+
+# ---- GRAPH CREATION
+#g.CreateGraph(fp.allVideoGameData)
+#CreateGraph(fp.PCData)
+# Other graphs that might be necessary
+
+print("GRAPH CREATION END")
+print("------------------------------------")
+
 print("PROGRAM START")
 print("------------------------------------")
+
+# -----FUNCTIONS
+# Function handeling actual recommendations
+def GameRecommendation(title, matrix):
+    print("Hello")
 
 # Fixes the labeling of the name in the csv to be parseable and readable for the matrix
 def FixTitleFormat(value):
@@ -73,7 +89,15 @@ N64csMatrix = cosine_similarity(N64Matrix, N64Matrix)
 print("MATRICES CREATED")
 print("------------------------------------")
 
-print("PROGRAM END")
+print("GAME RECOMMENDATIONS START")
 print("------------------------------------")
 
-print("OUTPUT")
+# ----- Creating Recommendations
+#GameRecommendation('Call of Duty: Ghosts', XOnecsMatrix)
+#GameRecommendation('Call of Duty: Ghosts', PS4csMatrix)
+
+print("GAME RECOMMENDATIONS END")
+print("------------------------------------")
+
+print("PROGRAM END")
+print("------------------------------------")
