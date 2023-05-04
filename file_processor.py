@@ -6,14 +6,15 @@ print("------------------------------------")
 
 allVideoGameData = pd.read_csv("Data/Video_Games_Sales_as_at_22_Dec_2016.csv")
 allVideoGameData = allVideoGameData.loc[:, ['Name', 'Platform', 'Genre', 'Publisher', 'Global_Sales', 'Critic_Score', 'User_Score', 'Rating']]
+#allVideoGameData = allVideoGameData.loc[:, ['Name', 'Platform', 'Genre', 'Rating']]
 
 # saving data based off of consoles
-PCData = allVideoGameData[allVideoGameData['Platform'] == 'PC']
-XOneData = allVideoGameData[allVideoGameData['Platform'] == 'XOne']
-PS4Data = allVideoGameData[allVideoGameData['Platform'] == 'PS4']
-WiiUData = allVideoGameData[allVideoGameData['Platform'] == 'WiiU']
-DSData = allVideoGameData[allVideoGameData['Platform'] == '3DS']
-N64Data = allVideoGameData[allVideoGameData['Platform'] == 'N64']
+PCData = allVideoGameData[allVideoGameData['Platform'] == 'PC'].reset_index(drop=True)
+XOneData = allVideoGameData[allVideoGameData['Platform'] == 'XOne'].reset_index(drop=True)
+PS4Data = allVideoGameData[allVideoGameData['Platform'] == 'PS4'].reset_index(drop=True)
+WiiUData = allVideoGameData[allVideoGameData['Platform'] == 'WiiU'].reset_index(drop=True)
+DSData = allVideoGameData[allVideoGameData['Platform'] == '3DS'].reset_index(drop=True)
+N64Data = allVideoGameData[allVideoGameData['Platform'] == 'N64'].reset_index(drop=True)
 
 # checking that dataframes were made correctly
 # Checking complete CSV was imported
