@@ -12,9 +12,7 @@ def main():
     print("------------------------------------")
 
     # ---- GRAPH CREATION
-    #g.CreateGraphs(fp.allVideoGameData)
-    #CreateGraph(fp.PCData)
-    # Other graphs that might be necessary
+    g.CreateGraphs()
 
     print("GRAPH CREATION END")
     print("------------------------------------")
@@ -22,13 +20,12 @@ def main():
     print("PROGRAM START")
     print("------------------------------------")
     #file_processor.numberOfUniquePlatforms(file_processor.allVideoGameData)
-    # fp.PCData fp.XOneData fp.PS4Data fp.WiiUData fp.DSData fp.N64Data
+    #fp.PCData fp.XOneData fp.PS4Data fp.WiiUData fp.DSData fp.N64Data
 
     print("CREATING MATRICES")
     print("------------------------------------")
 
-    # saving a new column in the dataframe to give our matrices values to run off of.
-    # New column is just all the columns we already parsed since we deem them necessary for recommendations
+    # saving a new column in the dataframe to give our matrices values to run off of for recomendations.
     fp.PCData['Recommended'] = fp.PCData.apply(lambda row: str(list(row[['Genre', 'Publisher', 'Global_Sales', 'Critic_Score', 'User_Score', 'Rating']])), axis = 1)
     fp.XOneData['Recommended'] = fp.XOneData.apply(lambda row: str(list(row[['Genre', 'Publisher', 'Global_Sales', 'Critic_Score', 'User_Score', 'Rating']])), axis = 1)
     fp.PS4Data['Recommended'] = fp.PS4Data.apply(lambda row: str(list(row[['Genre', 'Publisher', 'Global_Sales', 'Critic_Score', 'User_Score', 'Rating']])), axis = 1)
@@ -112,7 +109,7 @@ def ChangeFormat(value):
 # -----FUNCTIONS
 # Function handeling actual recommendations
 def GameRecommendation(title, matrix, platform):
-    # This searches the dataframe for the title and yields the index.
+    # Searching the specific dataframe for the title
     if platform == "PC":
         print("----------- Top Recommendations for " + title + " on PC ------------")
         localFrame = fp.PCData
