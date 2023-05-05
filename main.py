@@ -95,7 +95,6 @@ def main():
     print("PROGRAM END")
     print("------------------------------------")
 
-
 # ------ FUNCTIONS
 # Fixes the labeling of the name in the csv to be parseable and readable for the matrix
 def FixTitleFormat(value):
